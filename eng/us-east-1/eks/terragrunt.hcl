@@ -12,7 +12,7 @@ locals {
 }
 
 terraform {
-  source = "git::git@github.com:maitho/terraform-infra.git//ssm?ref=v0.0.1"
+  source = "git::git@github.com:maitho/terraform-infra.git//eks?ref=v0.0.1"
 }
 
 include {
@@ -20,13 +20,10 @@ include {
 }
 
 inputs = {
-  env = local.env
-  params = {
-    ssm = [
-      {
-        "name" = "/eks/project-name"
-        "paramValue" : "Jambo-Cluster"
-      }
-    ]
-  }
+  env                      = local.env
+  region                   = local.aws_region
+  availability_zones_count = 2
+  project                  = "Jambo"
+  vpc_cidr                 = "10.0.0.0/16"
+  subnet_cidr_bits         = 8
 }
