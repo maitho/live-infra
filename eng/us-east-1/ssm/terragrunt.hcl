@@ -25,8 +25,16 @@ inputs = {
     ssm = [
       {
         "name" = "/eks/project-name"
-        "paramValue" : "Jambo-Cluster"
-      }
+        "paramValue" : "Jambo-cluster"
+      },
+      {
+        "name" = "/devops/CodeRepoOauthToken"
+        "paramValue" : "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"
+      },
+      {
+        "name" : "/apps/login-app/ecr-repository"
+        "paramValue" : "542279893489.dkr.ecr.us-east-1.amazonaws.com/login-app"
+      },
     ]
   }
 }
