@@ -25,11 +25,11 @@ destroy-eks:
 
 
 deploy-all:
-	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//ssm
-	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//pipeline
-	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//eks
+	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//ssm $(option)
+	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//pipeline $(option)
+	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt apply --terragrunt-source $(terragrunt-source)//eks $(option)
 
 destroy-all:
-	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//eks
-	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//pipeline
-	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//ssm
+	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//eks $(option)
+	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//pipeline $(option)
+	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//ssm $(option)
