@@ -71,3 +71,10 @@ serverVersion:
 
 From the eks creation check the outputs to confrim on the cluster name to use below
 `    2. AWS_PROFILE=<profile-name> aws eks update-kubeconfig --region <region> --name <cluster-name>`
+
+TODO's:
+- apply and destroy pipelines [x]
+- apply and destroy ssm [x]
+- apply and destroy eks [x]
+- Create Makefile [x]
+- show makefile commands here with passed arg `Make deploy-all terragrunt-source=/some/path profile=dd`

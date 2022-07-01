@@ -33,3 +33,11 @@ destroy-all:
 	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//eks $(option)
 	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//pipeline $(option)
 	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt destroy --terragrunt-source $(terragrunt-source)//ssm $(option)
+
+
+remove-lock-ssm:
+	cd $(working_dir)/ssm && AWS_PROFILE=$(profile) terragrunt force-unclock $(lockid) --terragrunt-source $(terragrunt-source)//ssm $(option)
+remove-lock-pipeline:
+	cd $(working_dir)/pipelines/login-app && AWS_PROFILE=$(profile) terragrunt force-unclock $(lockid) --terragrunt-source $(terragrunt-source)//ssm $(option)
+remove-lock-eks:
+	cd $(working_dir)/eks && AWS_PROFILE=$(profile) terragrunt force-unclock $(lockid) --terragrunt-source $(terragrunt-source)//ssm $(option)
