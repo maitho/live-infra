@@ -25,7 +25,23 @@ inputs = {
     ssm = [
       {
         "name" = "/eks/project-name"
-        "paramValue" : "Jambo-Cluster"
+        "paramValue" : "Jambo-cluster"
+      },
+      {
+        "name" = "/devops/CodeRepoOauthToken"
+        "paramValue" : "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"
+      },
+      {
+        "name" : "/apps/login-app/ecr-repository"
+        "paramValue" : "542279893489.dkr.ecr.us-east-1.amazonaws.com/login-app"
+      },
+      {
+        "name" : "/pipelines/global/docker-username"
+        "paramValue" : "thige25"
+      },
+      {
+        "name" : "/pipelines/global/docker-password"
+        "paramValue" : "24fdda87-2cb8-4f30-817c-6df64f56dd7c"
       }
     ]
   }

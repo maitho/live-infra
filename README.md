@@ -71,3 +71,30 @@ serverVersion:
 
 From the eks creation check the outputs to confrim on the cluster name to use below
 `    2. AWS_PROFILE=<profile-name> aws eks update-kubeconfig --region <region> --name <cluster-name>`
+
+## Deploying the Cluster and Resources to AWS
+
+This uses a Make file with predefined commands set. On the root, open the Make file and eddit the `profile` and `terragrunt-source` as is on your local machine.
+The following resources will be provisioned on AWS:
+
+- VPC
+- EC2
+- EKS
+- CodePipeline
+- ECR
+
+### Deploying the stack
+
+- Deploy all ressources at once `Makedeploy-all`
+- Destroy all ressources at once `Makedeploy-all`
+- Deploy stack separately:
+  - Deploy SSM parameters `MAke deploy-ssm`
+  - Deploy pipeline and ecr `Make deploy-pipeline`
+  - Deploy eks, vps, ec2 `Make deploy-eks`
+
+![EKS](images/eks.png)
+![VPC](images/vpc.png)
+![EC2](images/ec2.png)
+![EC2](images/load-balancer.png)
+![CodePipeline](images/codepipeline.png)
+![ECR](images/ecr.png)
