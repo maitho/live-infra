@@ -29,7 +29,7 @@ inputs = {
       },
       {
         "name" = "/devops/CodeRepoOauthToken"
-        "paramValue" : "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"
+        "paramValue" : "###"
       },
       {
         "name" : "/apps/login-app/ecr-repository"
@@ -37,11 +37,11 @@ inputs = {
       },
       {
         "name" : "/pipelines/global/docker-username"
-        "paramValue" : "thige25"
+        "paramValue" : "###"
       },
       {
         "name" : "/pipelines/global/docker-password"
-        "paramValue" : "24fdda87-2cb8-4f30-817c-6df64f56dd7c"
+        "paramValue" : "###"
       }
     ]
   }

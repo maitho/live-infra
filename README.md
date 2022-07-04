@@ -71,6 +71,7 @@ serverVersion:
 
 This uses a Make file with predefined commands set. On the root, open the Make file and eddit the `profile` and `terragrunt-source` as is on your local machine.
 Modify this [file](https://github.com/maitho/live-infra/blob/main/eng/account.hcl) and use your account.
+Update the following `###` with correct values in `eng/us-east-1/ssm/terragrunt.hcl`
 The following resources will be provisioned on AWS:
 
 - VPC
