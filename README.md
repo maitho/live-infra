@@ -67,14 +67,10 @@ serverVersion:
 - aws-cli : `aws-cli/2.7.11 Python/3.9.11 Darwin/21.5.0 exe/x86_64 prompt/off`
 -
 
-## Create a Kubeconfig got Amazon EKS
-
-From the eks creation check the outputs to confrim on the cluster name to use below
-`    2. AWS_PROFILE=<profile-name> aws eks update-kubeconfig --region <region> --name <cluster-name>`
-
 ## Deploying the Cluster and Resources to AWS
 
 This uses a Make file with predefined commands set. On the root, open the Make file and eddit the `profile` and `terragrunt-source` as is on your local machine.
+Modify this [file](https://github.com/maitho/live-infra/blob/main/eng/account.hcl) and use your account.
 The following resources will be provisioned on AWS:
 
 - VPC
